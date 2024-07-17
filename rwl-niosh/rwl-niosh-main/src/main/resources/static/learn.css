@@ -1,0 +1,28 @@
+/* Custom CSS for blue navbar */
+ .navbar-custom {
+     background-color: #1527cf;
+    /* Blue color */
+}
+ .navbar-custom .navbar-nav .nav-link {
+     color: #fff;
+     font-size: 18px; /* Larger font size */
+     padding: 10px 20px; /* Increased padding */
+    /* White color for links */
+}
+ .navbar-custom .navbar-nav .nav-link:hover {
+     color: #f0f0f0;
+    /* Lighter shade of white on hover */
+     background-color: #0056b3;
+    /* Darker shade of blue on hover */
+     border-radius: 10px;
+}
+.navbar-custom .navbar-nav .nav-item .nav-link {
+      color: white; /* Text color */
+    }
+/* Background color for the main content area */
+ .content-background {
+     background-color: #f8f9fa;
+    /* Light gray */
+     padding: 20px;
+     border-radius: 10px;
+}

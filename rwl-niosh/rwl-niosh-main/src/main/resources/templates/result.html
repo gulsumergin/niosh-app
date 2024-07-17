@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="result.css"> <!-- Include external CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Results</h2> <!-- Title "Results" centered -->
+            <p class="text-right">Date: <span id="currentDate"></span></p> <!-- Date on top right -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered custom-table">
+                <thead>
+                <tr>
+                    <th scope="col" class="table-header">NAME</th>
+                    <th scope="col" class="table-header">VALUE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>RWL</td>
+                    <td th:text="${rwl}"></td>
+                </tr>
+                <tr>
+                    <td>Horizontal Multiplier</td>
+                    <td th:text="${hm}"></td>
+                </tr>
+                <tr>
+                    <td>Vertical Multiplier</td>
+                    <td th:text="${vm}"></td>
+                </tr>
+                <tr>
+                    <td>Distance Multiplier</td>
+                    <td th:text="${dm}"></td>
+                </tr>
+                <tr>
+                    <td>Asymmetry Multiplier</td>
+                    <td th:text="${am}"></td>
+                </tr>
+                <tr>
+                    <td>Frequency Multiplier</td>
+                    <td th:text="${fm}"></td>
+                </tr>
+                <tr>
+                    <td>Coupling Multiplier</td>
+                    <td th:text="${cm}"></td>
+                </tr>
+                <tr>
+                    <td>Load Index</td>
+                    <td th:text="${li}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered custom-table">
+                <thead>
+                <tr>
+                    <th scope="col" class="table-header">NAME</th>
+                    <th scope="col" class="table-header">VALUE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Horizontal Distance</td>
+                    <td th:text="${H}"></td>
+                </tr>
+                <tr>
+                    <td>Vertical Height</td>
+                    <td th:text="${V}"></td>
+                </tr>
+                <tr>
+                    <td>Distance</td>
+                    <td th:text="${D}"></td>
+                </tr>
+                <tr>
+                    <td>Asymmetry Angle</td>
+                    <td th:text="${A}"></td>
+                </tr>
+                <tr>
+                    <td>Lift Frequency</td>
+                    <td th:text="${F}"></td>
+                </tr>
+                <tr>
+                    <td>Duration of the Task</td>
+                    <td th:text="${workDuration}"></td>
+                </tr>
+                <tr>
+                    <td>Coupling Type</td>
+                    <td th:text="${couplingType}"></td>
+                </tr>
+                <tr>
+                    <td>Actual Weight</td>
+                    <td th:text="${L}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-4-custom"> <!-- Added margin bottom class -->
+                <div class="card-body">
+                    <h5 class="card-title">Lifting Index Value</h5>
+                    <p class="card-text" th:text="${li}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4-custom" th:classappend="${risk == 'VERY LOW' ? 'very-low' :
+                                           risk == 'LOW' ? 'low' :
+                                           risk == 'MODERATE' ? 'moderate' :
+                                           risk == 'HIGH' ? 'high' :
+                                           risk == 'VERY HIGH' ? 'very-high' :
+                                           'invalid'}"> <!-- Added margin bottom class -->
+                <div class="card-body">
+                    <h5 class="card-title">Risk Implication</h5>
+                    <p class="card-text" th:text="${risk}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4-custom"> <!-- Added margin bottom class -->
+                <div class="card-body">
+                    <h5 class="card-title">Recommended Actions</h5>
+                    <p class="card-text" th:text="${recommendAction}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col" class="rec-table-header">N-RWL-CALCULATION RECOMMENDATIONS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Setting the V value to 75 cm is ideal for <strong>VM</strong>.</td>
+                </tr>
+                <tr>
+                    <td>Setting the H value to 25 cm is ideal for <strong>HM</strong>.</td>
+                </tr>
+                <tr>
+                    <td>Setting the D value to 25 cm is ideal for <strong>DM</strong>.</td>
+                </tr>
+                <tr>
+                    <td>Decreasing the A value to 0 degree is ideal for <strong>AM</strong>.</td>
+                </tr>
+                <tr>
+                    <td>Decreasing the work duration and repetitiveness for 1 worker is ideal for <strong>FM</strong>.</td>
+                </tr>
+                <tr>
+                    <td>In order to decrease the <strong>work duration</strong> per worker it is recommended to make job rotations within the organization.</td>
+                </tr>
+                <tr>
+                    <td>A good coupling is ideal for <strong>CM</strong>.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <div class="row mt-3">
+                <div class="col">
+                    <a href="/calculate" class="btn btn-primary btn-block btn-lg">Return to Calculation Page</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row mt-3">
+                <div class="col">
+            <form action="/download" method="get">
+                <input type="hidden" name="rwl" th:value="${rwl}" />
+                <input type="hidden" name="hm" th:value="${hm}" />
+                <input type="hidden" name="vm" th:value="${vm}" />
+                <input type="hidden" name="dm" th:value="${dm}" />
+                <input type="hidden" name="am" th:value="${am}" />
+                <input type="hidden" name="fm" th:value="${fm}" />
+                <input type="hidden" name="cm" th:value="${cm}" />
+                <input type="hidden" name="li" th:value="${li}" />
+                <input type="hidden" name="H" th:value="${H}" />
+                <input type="hidden" name="V" th:value="${V}" />
+                <input type="hidden" name="D" th:value="${D}" />
+                <input type="hidden" name="A" th:value="${A}" />
+                <input type="hidden" name="F" th:value="${F}" />
+                <input type="hidden" name="workDuration" th:value="${workDuration}" />
+                <input type="hidden" name="couplingType" th:value="${couplingType}" />
+                <input type="hidden" name="L" th:value="${L}" />
+                <input type="hidden" name="risk" th:value="${risk}" />
+                <input type="hidden" name="recommendedAction" th:value="${recommendedAction}" />
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Download PDF</button>
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // JavaScript to display current date
+    var currentDate = new Date();
+    var dateElement = document.getElementById("currentDate");
+    dateElement.textContent = currentDate.toDateString();
+</script>
+</body>
+</html>

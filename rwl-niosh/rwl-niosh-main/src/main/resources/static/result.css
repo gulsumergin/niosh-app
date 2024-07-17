@@ -1,0 +1,62 @@
+
+/* Additional custom styles */
+ .custom-table {
+     font-size: 1.2rem;
+    /* Increase font size for tables */
+     border-radius: 20px;
+    /* Rounded corners for tables */
+}
+ .card {
+     font-size: 1.2rem;
+    /* Increase font size for cards */
+}
+.table-header {
+  background-color: #4169E1; /* Adjust the color as needed */
+}
+.rec-table-header{
+    color: white;
+    background-color: #363945;
+}
+
+/* Custom styling for first column of every row in Table 1 and Table 2 */
+ .custom-table tbody tr td:first-child {
+     background-color: #f2f2f2;
+    /* Slightly gray background color */
+}
+
+.table-bordered.custom-table tbody tr td:nth-child(2) {
+        font-weight: bold;
+    }
+
+ .mb-4-custom {
+     margin-bottom: 2rem;
+    /* Custom margin bottom */
+}
+ .btn {
+     margin-bottom: 2rem;
+    /* Custom margin bottom */
+}
+ .very-low {
+     background-color: #1be04c;
+    /* Change the background color to red for high risk */
+}
+ .low {
+     background-color: green;
+    /* Change the background color to red for high risk */
+}
+ .moderate {
+     background-color: yellow;
+    /* Change the background color to red for high risk */
+}
+ .high {
+     background-color: red;
+    /* Change the background color to red for high risk */
+}
+ .very-high {
+     background-color: #780707;
+    /* Change the background color to green for normal risk */
+}
+ .invalid {
+    color: white;
+    background-color: black;
+}

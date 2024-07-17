@@ -1,0 +1,70 @@
+@startuml
+class com.example.rwl.RwlApplication {
++ {static} void main(String[])
+}
+
+class com.example.rwl.config.ApplicationConfig {
++ CalculationRequest calculationRequest()
+}
+
+class com.example.rwl.model.CalculationRequest {
+- double loadConstant
+- double H
+- double V
+- double D
+- double A
+- double F
+- double workDuration
+- CouplingType couplingType
+- double L
++ double getLoadConstant()
++ double getH()
++ void setH(double)
++ double getV()
++ void setV(double)
++ double getD()
++ void setD(double)
++ double getA()
++ void setA(double)
++ double getF()
++ void setF(double)
++ double getWorkDuration()
++ void setWorkDuration(double)
++ CouplingType getCouplingType()
++ void setCouplingType(CouplingType)
++ double getL()
++ void setL(double)
+}
+
+
+class com.example.rwl.controller.CalculationController {
+- CalculationService calculationService
++ <<Create>> CalculationController(CalculationService)
++ String showCalculationForm()
++ String calculate(CalculationRequest,Model)
++ String showResultPage()
+}
+
+
+class com.example.rwl.service.CalculationService {
+- CalculationRequest calculationRequest
++ <<Create>> CalculationService(CalculationRequest)
++ double horizontalMultiplier()
++ double verticalMultiplier()
++ double distanceMultiplier()
++ double asymmetryMultiplier()
+- double calculateFM(double,double[],int)
++ double frequencyMultiplier()
++ double couplingMultiplier()
++ double calculateRWL(CalculationRequest)
++ double loadIndex()
+}
+
+
+enum com.example.rwl.model.CouplingType {
++  GOOD
++  FAIR
++  POOR
+}
+
+@enduml

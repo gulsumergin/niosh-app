@@ -1,0 +1,60 @@
+
+/* Custom CSS for blue navbar */
+ .navbar-custom {
+     background-color: #1527cf;
+    /* Blue color */
+}
+ .navbar-custom .navbar-nav .nav-link {
+     color: #fff;
+     font-size: 18px; /* Larger font size */
+     padding: 10px 20px; /* Increased padding */
+    /* White color for links */
+}
+ .navbar-custom .navbar-nav .nav-link:hover {
+     color: #f0f0f0;
+    /* Lighter shade of white on hover */
+     background-color: #0056b3;
+    /* Darker shade of blue on hover */
+     border-radius: 10px;
+}
+.navbar-custom .navbar-nav .nav-item .nav-link {
+      color: white; /* Text color */
+    }
+
+/* Background color for the main content area */
+.content-background {
+  background-color: #f8f9fa; /* Light gray */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Style for headings */
+.content-background h1,
+.content-background h2,
+.content-background h3 {
+  color: #2F4F4F;
+}
+
+/* Style for paragraphs */
+.content-background p {
+  color: #000000; /* Black */
+}
+
+/* Style for links */
+.content-background a {
+  color: #007bff; /* Blue */
+}
+
+.content-background a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for lists */
+.content-background ul {
+  padding-left: 20px; /* Indent list items */
+}
+
+/* Style for list items */
+.content-background li {
+  margin-bottom: 10px; /* Add space between list items */
+}

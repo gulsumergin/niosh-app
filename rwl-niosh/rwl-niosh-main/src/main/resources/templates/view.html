@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th bgcolor="#4169E1">NAME</th>
+        <th bgcolor="#4169E1">VALUE</th>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">RWL</td>
+        <td th:text="${rwl}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Horizontal Multiplier</td>
+        <td th:text="${hm}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Vertical Multiplier</td>
+        <td th:text="${vm}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Distance Multiplier</td>
+        <td th:text="${dm}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Asymmetry Multiplier</td>
+        <td th:text="${am}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Frequency Multiplier</td>
+        <td th:text="${fm}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Coupling Multiplier</td>
+        <td th:text="${cm}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Load Index</td>
+        <td th:text="${li}"></td>
+    </tr>
+</table>
+<br>
+<table border="1">
+    <tr>
+        <th bgcolor="#4169E1">NAME</th>
+        <th bgcolor="#4169E1">VALUE</th>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Horizontal Distance</td>
+        <td th:text="${H}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Vertical Height</td>
+        <td th:text="${V}"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#F2F2F2">Distance</td>
+        <td th:text="${D}"></td>
+    </tr>
+</table>
+<br>
+<br>
+<table border="1">
+    <tr>
+        <th bgcolor="#6a5acd">LIFTING INDEX VALUE</th>
+    </tr>
+    <tr>
+        <strong><td th:text="${li}"></td></strong>
+    </tr>
+</table>
+<br>
+<table border="1">
+    <tr>
+        <th bgcolor="#2C3E50" color="white">RISK IMPLICATION</th>
+    </tr>
+    <tr>
+        <strong><td th:text="${risk}"></td></strong>
+    </tr>
+</table>
+<br>
+<!--<table border="1">
+    <tr>
+        <th bgcolor="#4169E1">Recommended Actions</th>
+    </tr>
+    <tr>
+        <strong><td th:text="${recommendedAction}"></td></strong>
+    </tr
+</table>>-->
+<br>
+<table border="1">
+    <tr>
+        <th bgcolor="black" color="white">N-RWL-CALCULATION RECOMMENDATIONS</th>
+    </tr>
+    <tr>
+        <td>Setting the V value to 75 cm is ideal for <strong>VM</strong>.</td>
+    </tr>
+    <tr>
+        <td>Setting the H value to 25 cm is ideal for <strong>HM</strong>.</td>
+    </tr>
+    <tr>
+        <td>Setting the D value to 25 cm is ideal for <strong>DM</strong>.</td>
+    </tr>
+    <tr>
+        <td>Decreasing the A value to 0 degree is ideal for <strong>AM</strong>.</td>
+    </tr>
+    <tr>
+        <td>Decreasing the work duration and repetitiveness for 1 worker is ideal for <strong>FM</strong>.</td>
+    </tr>
+    <tr>
+        <td>In order to decrease the <strong>work duration</strong> per worker it is recommended to make job rotations within the organization.</td>
+    </tr>
+    <tr>
+        <td>A good coupling is ideal for <strong>CM</strong>.</td>
+    </tr>
+</table>
+</body>
+</html>

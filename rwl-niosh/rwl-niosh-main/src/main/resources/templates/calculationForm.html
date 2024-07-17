@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Form</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/calculate">Calculate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/learn">Learn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Calculation Form</h2>
+
+<a href="/learn" class="a-learn"><button>Go to Learn NIOSH Page</button></a>
+
+<form th:action="@{/calculate}" method="post">
+    <label for="h">H:</label>
+    <input type="number" id="h" name="H" placeholder="Horizontal distance"><br>
+    <div class="info-tooltip" title="H = Distance from hands to mid-point between medial malleoli measured at origin and destination.">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="v">V:</label>
+    <input type="number" id="v" name="V" placeholder="Vertical height"><br>
+    <div class="info-tooltip" title="V = Distance of hands above floor measured at origin and destination.">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="d">D:</label>
+    <input type="number" id="d" name="D" placeholder="Distance Multiplier"><br>
+    <div class="info-tooltip" title="D = Distance">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="a">A:</label>
+    <input type="number" id="a" name="A" placeholder="Asymmetry angle"><br>
+    <div class="info-tooltip" title="A =
+    Asymmetric angle, the angle between asymmetry line & sagittal line.
+    Asymmetry Line: Line between malleoli mid-point & point between end mid-point.
+    Sagittal Line: Line between malleoli mid-point & sagittal plane if in anatomical position.">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="f">F:</label>
+    <input type="number" id="f" name="F" placeholder="Lift frequency"><br>
+    <div class="info-tooltip" title="F =
+    Obtained from a table and depends on:
+    Frequency (repetitiveness): lifts/minutes
+    Duration: Short, Medium, Long Lift Height, V">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="workDuration">Work Duration:</label>
+    <input type="number" step="any" id="workDuration" name="workDuration" placeholder="hours/day"><br>
+    <div class="info-tooltip" title="W = Work Duration">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="couplingType">Coupling Type:</label>
+    <select id="couplingType" name="couplingType">
+        <option value="GOOD">Good</option>
+        <option value="FAIR">Fair</option>
+        <option value="POOR">Poor</option>
+    </select><br>
+    <div class="info-tooltip" title="C =
+    Obtained from a table and depends on coupling
+    Quality: Good, Fair or Poor
+    Lift Height, V">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <label for="l">L:</label>
+    <input type="number" id="l" name="L" placeholder="Actual weight"><br>
+    <div class="info-tooltip" title="L = Load Constant: Characteristics of the load being lifted, including weight, shape, and grip.">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-submit">Calculate</button>
+
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

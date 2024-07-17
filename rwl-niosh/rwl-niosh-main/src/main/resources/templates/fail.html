@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Simple Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fail.css"> <!-- Include external CSS file -->
+</head>
+<body>
+<div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="outer-container col-lg-10 col-md-12 col-sm-12">
+        <div class="warning">
+            BAD INPUT
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="table-header">NAME</th>
+                        <th scope="col" class="table-header">VALUE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Horizontal Distance</td>
+                        <td th:text="${H}"></td>
+                    </tr>
+                    <tr>
+                        <td>Vertical Height</td>
+                        <td th:text="${V}"></td>
+                    </tr>
+                    <tr>
+                        <td>Distance</td>
+                        <td th:text="${D}"></td>
+                    </tr>
+                    <tr>
+                        <td>Asymmetry Angle</td>
+                        <td th:text="${A}"></td>
+                    </tr>
+                    <tr>
+                        <td>Lift Frequency</td>
+                        <td th:text="${F}"></td>
+                    </tr>
+                    <tr>
+                        <td>Duration of the Task</td>
+                        <td th:text="${workDuration}"></td>
+                    </tr>
+                    <tr>
+                        <td>Coupling Type</td>
+                        <td th:text="${couplingType}"></td>
+                    </tr>
+                    <tr>
+                        <td>Actual Weight</td>
+                        <td th:text="${L}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a th:href="@{/calculate}" class="btn btn-primary custom-btn">Back to Calculate Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

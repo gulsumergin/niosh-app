@@ -1,0 +1,30 @@
+        .warning {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .outer-container {
+            background-color: #f0f0f0; /* Slightly different color */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .custom-table {
+            width: 100%; /* Make the table wider */
+            font-size: 1.5rem; /* Increase font size for a "huge" table */
+        }
+
+        .custom-btn {
+            width: 100%; /* Make the button wider */
+            max-width: 300px; /* Set a maximum width to avoid stretching too much */
+        }
+
+        .custom-table tbody td:nth-child(2) {
+            font-weight: bold;
+        }
